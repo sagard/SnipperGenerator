@@ -44,22 +44,14 @@ public class Main {
 
 			// if pattern not found
 			if(pl.size()<1) return null;
-			// Convert the arraylist to send to get the min window
-			Integer[][] lists = new Integer[pl.size()][] ;
-			int i =0;
-			while(i<pl.size()){
-				ArrayList<Integer> row = pl.get(i);
-				lists[i] = row.toArray(new Integer[row.size()]);
-				i++;
-			}
-
+			
 			// get the min window
-			int[] res = FindWindow.findMinWindow(lists);
+			int[] res = FindWindow.findMinWindow(pl);
 			ArrayList<Integer> res1 = new ArrayList<Integer>();
 			for(int j=0;j<res.length;j++){
-				res1.add(lists[j][res[j]]);
+				res1.add(pl.get(j).get(res[j]));
 			}
-
+			
 			// send the array to print
 			sub = printSnippet(res1,txt,patarray);
 
@@ -81,8 +73,7 @@ public class Main {
 		int min= Collections.min(poslist);	
 		int max = Collections.max(poslist);
 		int diff = max - min;
-		//int minext = min - extra;
-		//int maxext = max + extra;
+		
 		int minext = min;
 		int maxext = max;
 		String sub=null;
@@ -165,7 +156,7 @@ public class Main {
 			if(pat.length == 1)
 			 sub = formatsnippet(sub,pat[countpattern]);
 		}
-		//System.out.print(sub);
+	//	System.out.print(sub);
 		return sub;
 	}
 
@@ -188,14 +179,10 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		String pat = "end fish";
+		String pat = "deep the pizza";
 		String txt = "end this is for deep dish for the think in string and for dish . " +
 		"  also for pizza the deep dish pizza  and " +
 		"  also for pizza the deep dish pizza  and " +
-		"  also for pizza the deep  dish  and " +
-		"  also for pizza the deep pizza  and " +
-		"  also for pizza the deep    and " +
-		"  also for pizza the deep dish   and " +
 		"  pizza another fish one of a plus  " +
 		" given deep dish  is "       		       ;
 		Main.highlight_doc(pat, txt);

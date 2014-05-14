@@ -179,14 +179,12 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		String pat = "deep the pizza";
-		String txt = "end this is for deep dish for the think in string and for dish . " +
-		"  also for pizza the deep dish pizza  and " +
-		"  also for pizza the deep dish pizza  and " +
-		"  pizza another fish one of a plus  " +
-		" given deep dish  is "       		       ;
+		String pat = "mutter paneer";
+		String txt = "Excellent lunch Buffett," +
+				" I only wish they had mutter paneer on more often. " +
+				"Personally unless you are dieing to eat a specific Indian dish, I'd get the buffet whenever " +
+				"you go as its always good and you get naan with your order.";
 		Main.highlight_doc(pat, txt);
-
 
 	}
 }
